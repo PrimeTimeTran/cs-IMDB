@@ -1,4 +1,100 @@
+# CoderSchool FTW -  PrimeTimeTwitter
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Created with love by: Loi Tran
+
+A clone of IMDB using React JS. This application uses ES6 practices such as destructuring, async await, fat arrow functions, fetch, and parsing to achieve our objectives.
+
+## Try it out
+
+Demo online at [this link.](https://festive-thompson-5eeb3f.netlify.com/)
+
+## Video Walkthrough
+
+![Demo](./demo.gif)
+
+## State
+
+The following is an object which represents our application's `state`. Understanding how to work with this object is critical to how the application behaves.
+
+```javascript
+{
+  "tweets": [
+    {
+      "body": "Practice on many types of different applications",
+      "likes": [
+        "PrimeTimeTran",
+        "Phil"
+      ],
+      "retweets": [
+        {
+          "body": "Sounds like a good idea to me!",
+          "likes": [],
+          "createdAt": "2019-05-26T06:32:25.172Z",
+          "userName": "Chung2klee"
+        }
+      ],
+      "createdAt": "2019-05-26T05:13:17.363Z",
+      "userName": "BoomBoomRay"
+    },
+    {
+      "body": "Study hard to learn programming.",
+      "likes": [
+        "BoomBoomRay",
+        "PrimeTimeTran",
+        "Hieu"
+      ],
+      "retweets": [],
+      "createdAt": "2019-05-26T05:13:11.748Z",
+      "userName": "BoomBoomRay"
+    }
+  ],
+  "currentUser": "BoomBoomRay"
+}
+```
+
+## User Stories
+
+The following **functionalities** are completed:
+
+* [x] User can see a list of movies.
+* [x] User can see click a button to see additional movies.
+* [x] User can see a poster of an individual movie.
+* [x] User can see the title of an individual movie.
+* [x] User can see the description of an individual movie.
+* [x] User can see the ratings of an individual movie.
+* [x] User can see the vote count of an individual movie.
+* [x] User can see the release date of an individual movie.
+* [x] User can see all the genres of movies.
+* [x] User can see how many movies are in a genre.
+* [x] User can filter for a specific genre.
+* [x] User can filter from most popular to least popular.
+* [x] User can search for a movie from it's title.
+* [x] User can search for a movie from it's description.
+* [x] User can view the application on a mobile device and access all the functionalties above.
+
+## Time Spent and Lessons Learned
+
+Time spent: **6** hours spent in total.
+
+I learned how to implement a 'react-like' structure for the application using JS. After a few refactors the code ended up a lot cleaner. I also learned how forms work in bootstrap better. If properly setup they can fire actions on enter press without an event listener.
+
+## License
+
+    Copyright [2019] [Loi Tran]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
 
 ## Available Scripts
 
