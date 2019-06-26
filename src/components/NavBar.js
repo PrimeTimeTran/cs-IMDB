@@ -15,13 +15,14 @@ class NavBar extends React.Component {
   render() {
     return (
       <Navbar className="justify-content-end" bg="dark" variant="dark">
-        <Navbar.Brand href="#home" style={{ position: 'absolute', left: 0 }}>
+        <Navbar.Brand href="#home" style={{ position: 'absolute', left: '2%', height: '100%' }}>
           <img
             alt=""
-            width="250"
-            height="125"
             src={require('../logo.jpeg')}
             className="d-inline-block align-top"
+            style={{
+              height: '100%',
+            }}
           />
         </Navbar.Brand>
         <Nav activeKey="/home">
