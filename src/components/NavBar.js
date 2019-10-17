@@ -1,34 +1,48 @@
-import React from 'react'
-import {
-  Nav,
-  Form,
-  Button,
-  Navbar,
-  FormControl,
-} from 'react-bootstrap'
+import React from "react";
+import { Nav, Form, Button, Navbar, FormControl } from "react-bootstrap";
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {  };
+    this.state = { search: "" };
   }
+
+  filterMovies = e => {
+    this.setState({ search: e.target.value })
+    this.props.onSearchMovies(this.state.search)
+  };
+
   render() {
     return (
       <Navbar className="justify-content-end" bg="dark" variant="dark">
-        <Navbar.Brand href="#home" style={{ position: 'absolute', left: '2%', height: '100%' }}>
+        <Navbar.Brand
+          href="#home"
+          style={{ position: "absolute", left: "2%", height: "100%" }}
+        >
           <img
             alt=""
-            src={require('../logo.jpeg')}
+            src={require("../logo.jpeg")}
             className="d-inline-block align-top"
             style={{
-              height: '100%',
+              height: "100%"
             }}
           />
         </Navbar.Brand>
         <Nav activeKey="/home">
           <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" value={this.state.search} onChange={(e) => this.setState({ search: e.target.value })}/>
-            <Button onClick={() => this.onSearchMovies()} variant="outline-success">Search</Button>
+            <FormControl
+              type="text"
+              className="mr-sm-2"
+              placeholder="Search"
+              value={this.state.search}
+              onChange={e => this.filterMovies(e)}
+            />
+            <Button
+              variant="outline-success"
+              onClick={() => this.props.onSearchMovies(this.state.search)}
+            >
+              Search
+            </Button>
           </Form>
           <Nav.Item>
             <Nav.Link href="/home">Active</Nav.Link>
@@ -50,5 +64,4 @@ class NavBar extends React.Component {
   }
 }
 
-// export default NavBar;
 export { NavBar };

@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   Card,
-  Badge,
   Button,
   ListGroup,
   ListGroupItem,
@@ -9,11 +8,7 @@ import {
 
 import moment from 'moment'
 
-const renderBadges = (genres, movie) => {
-  const filteredGenres = genres.filter((genre) => movie.genre_ids.includes(genre.id))
-  const names = filteredGenres.map(({ name }) => name)
-  return names.map((name) => <Badge pill key={name} variant="success" style={{ margin: 5 }}>{name}</Badge>)
-}
+import Badges from './Badges'
 
 const MovieCard = ({
   title,
@@ -34,12 +29,12 @@ const MovieCard = ({
         <Card.Title style={{ fontWeight: 'bold', fontSize: 30, height: 100 }}>
           {title}
         </Card.Title>
-        {renderBadges(genres, movie)}
+        <Badges movie={movie} genres={genres} />
         <Card.Text style={{ fontSize: 20, height: '15rem', overflowY: 'scroll', marginTop: 10 }}>
           {overview}
         </Card.Text>
           <Button className="btn btn-success btn-lg" onClick={() => onClickMovie(movie.id)} style={{ marginBottom: 15 }}>
-            Red
+            View Trailer
           </Button>
         <ListGroup className="list-group-flush">
           <ListGroupItem style={{ fontSize: 15 }}>
